@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+<title>{sort:title}</title>
+<meta name="keywords" content="{sort:keywords}">
+<meta name="description" content="{sort:description}">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/amazeui.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/css.css">
+<script src="{pboot:sitedomain}/style/js/jquery.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/amazeui.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/jquery.superslide.js"></script>
+<script src="{pboot:sitedomain}/style/js/sidebar_contact.js"></script>
+<style type="text/css">
+.iconfont {
+	font-size: 30px !important;
+}
+.icon_contact .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-default .am-navbar-nav .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-nav a {
+	line-height: 27px;
+}
+</style>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1976070_oklai9ulpl8.css">
+</head>
+<body>
+{include file=head.html}
+{include file=top.html}
+<div class="page_main">
+  <div class="list_product">
+    <ul>
+      {pboot:list num=8 order=sorting}
+      <li>
+        <figure> <a href="[list:link]" title="[list:title]"><img src="[list:ico]" alt="[list:title]"></a>
+          <figcaption><a href="[list:link]" title="[list:title]">[list:title]</a></figcaption>
+        </figure>
+      </li>
+      {/pboot:list}
+    </ul>
+  </div>
+  {pboot:if({page:rows}>0)}
+  <style type="text/css">
+	.pages .page-num-current{
+			background: #c2000e;
+			color: #FFF;
+	}
+	.pages span{
+		padding: 4px 10px;
+			border: #d2d2d2 1px solid;
+			background: #f2f2f2;
+			font-size: 14px;
+			font-family: "微软雅黑";
+			color: #333;
+			margin-right: 8px;
+			text-decoration: none;
+	}
+</style>
+  <div class="pages">
+    <div class="green-black"><a href="{page:pre}">Prev</a> {page:numbar} <a href="{page:next}">Next</a> <a class="page-item page-link" href="javascript:;" title="当前页/总页数">{page:current}/{page:count}</a></div>
+  </div>
+  {/pboot:if} </div>
+</div>
+</div>
+{include file=foot.html}

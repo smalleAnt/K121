@@ -1,0 +1,65 @@
+<footer>
+  <div class="box_contact">
+    <div class="qrcode"><img src="{pboot:companyweixin}" alt="" /></div>
+    <div class="box_3 follow">
+      <div class="bhead"><strong class="hidden-xs">微信公众号</strong></div>
+      <div class="bbody">
+        <ul>
+          <li class="wechat"><a href="javascript:;" data-am-modal="{target: '#your-modal'}"><i class="iconfont icon-weixin"></i></a></li>
+          <li class="weibo"><a href="{label:weibo}" target="_blank" rel="nofollow"><i class="iconfont icon-weibo"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="box_3 contact">
+      <div class="bhead"><strong>联系方式</strong></div>
+      <div class="bbody">
+        <ul>
+          <li>邮箱：{pboot:companyemail}</li>
+          <li>电话：{pboot:companyphone}</li>
+          <li>地址：{pboot:companyaddress}</li>
+          <li>手机：{pboot:companymobile}</li>
+          <li>网址：{pboot:httpurl}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <nav class="nav_footer"> {pboot:nav num=6}
+    <dl>
+      <dt><a href="[nav:link]" title="[nav:name]">[nav:name]</a></dt>
+      {pboot:2nav parent=[nav:scode]}
+      <dd><a href="[2nav:link]" title="[2nav:name]">[2nav:name]</a></dd>
+      {/pboot:2nav}
+    </dl>
+    {/pboot:nav} </nav>
+  <div class="footer_info">{pboot:sitecopyright} <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">{pboot:siteicp}</a> <a href="{pboot:sitedomain}/sitemap.xml" target="_blank">XML地图</a> <a target="_blank" href="https://www.adminbuy.cn/">网站模板</a> {pboot:sitestatistical}</div>
+</footer>
+<div id="open_im" class="icon_contact"><i class="iconfont icon-ziyuan"></i></div>
+<div class="box_contact_sidebar" id="im_main">
+  <div class="bhead"> <strong>联系我们</strong>
+    <div id="close_im" class="close-im"><a href="javascript:void(0);" title="关闭"></a></div>
+  </div>
+  <div class="bbody">
+    <dl>
+      <dt>联系电话</dt>
+      <dd>{pboot:companyphone}</dd>
+    </dl>
+    <dl>
+      <dt>官方微信</dt>
+      <dd><img src="{pboot:companyweixin}" alt="官方微信" /></dd>
+    </dl>
+  </div>
+</div>
+<div data-am-widget="gotop" class="am-gotop am-gotop-fixed"> <a href="#top" title="返回顶部"> <span class="am-gotop-title">返回顶部</span> <i class="iconfont icon-xiangshang"></i> </a> </div>
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="your-modal">
+  <div class="am-modal-dialog" style="padding: 40px 0;"><img src="{pboot:companyweixin}" width="160" height="160"
+				 alt="官方微信" /><br />
+    扫描二维码</div>
+</div>
+<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default">
+  <ul class="am-navbar-nav am-cf am-avg-sm-4">
+    <li><a href="tel:{pboot:companyphone}"><span class="iconfont icon-dianhua"></span><span class="am-navbar-label">联系电话</span></a></li>
+    <li data-am-navbar-share><a href="###" class=""><span class="iconfont icon-share"></span><span class="am-navbar-label">分享到</span></a></li>
+    <li data-am-navbar-qrcode><a href="###" class=""><span class="iconfont icon-ico"></span><span class="am-navbar-label">扫码访问</span></a></li>
+  </ul>
+</div>
+</body></html>

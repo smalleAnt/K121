@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+<title>{sort:title}</title>
+<meta name="keywords" content="{sort:keywords}">
+<meta name="description" content="{sort:description}">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/amazeui.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/css.css">
+<script src="{pboot:sitedomain}/style/js/jquery.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/amazeui.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/jquery.superslide.js"></script>
+<script src="{pboot:sitedomain}/style/js/sidebar_contact.js"></script>
+<style type="text/css">
+.iconfont {
+	font-size: 30px !important;
+}
+.icon_contact .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-default .am-navbar-nav .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-nav a {
+	line-height: 27px;
+}
+</style>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1976070_oklai9ulpl8.css">
+</head>
+<body>
+{include file=head.html}
+
+{include file=top.html}
+<style type="text/css">
+	.yanzheng img{
+		width: auto;
+	}
+</style>
+<div class="page_main">
+  <div class="list_single">
+    <div class="contact2_right">
+      <p><strong>We will get back to you as soon as possible. Thank you for your email. To protect the privacy of each visitor, please feel free to fill in.</strong></p>
+      <p><strong>Note: for immediate reply, please call the unified national hotline：{pboot:companymobile}</strong></p>
+      <form method="post" action="{pboot:msgaction}">
+        <div class="contact2_li">
+          <input type="text" name="contacts" placeholder="Contact*" required>
+        </div>
+        <div class="contact2_li">
+          <input type="text" name="email" placeholder="Email*" required>
+        </div>
+        <div class="contact2_li">
+          <input type="text" name="mobile" placeholder="mobile" required>
+        </div>
+        <div class="contact2_li">
+          <textarea type="text" name="content" placeholder="Content"></textarea>
+        </div>
+        <div class="faqline">
+          <input name="checkcode" type="text" class="login_verification" id="code" size="6" maxlength="6" style="width: 37%;" placeholder="Checkcode" onblur="this.placeholder='Checkcode'" />
+          <font color="#FF0000">*</font> <span class="yanzheng"> <img src="{pboot:checkcode}" onClick="this.src='{pboot:checkcode}?'+Math.round(Math.random()*10);"></span> </div>
+        <input class="tijiao" type="submit" onclick="save()" value="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{include file=foot.html} 

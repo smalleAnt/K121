@@ -1,0 +1,53 @@
+{include file=head.html}
+
+		{include file=top.html}
+				<div class="page_main">
+					<div class="list_single">
+						<p>
+							<p>地址：浙江省温州乐清市柳市镇xxx工业区</p>
+							<p>投诉热线：138&#215;&#215;&#215;&#215;8888<br /></p>
+							<p>销售：0577-&#215;&#215;&#215;&#215;&#215;888<br /></p>
+							<p>传真：0577-&#215;&#215;&#215;&#215;&#215;999<br /></p>
+							<p>邮编：325604</p>
+							<p>邮箱：xxxxxx@qq.com</p>
+						</p>
+						<!-- <div class="cont_r" id="map" style="width:97%;height:400px;border:#ccc solid 1px;">
+							<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=kOGC1yeXSTLfW2drjxXp7OdK"></script>
+							<script type="text/javascript">
+								// 百度地图API功能
+								var map = new BMap.Map("map");
+								var point = new BMap.Point(116.331398, 39.897445);
+								// 创建地址解析器实例     
+								var myGeo = new BMap.Geocoder();
+								map.centerAndZoom(point, 15);
+								// 将地址解析结果显示在地图上，并调整地图视野    
+								myGeo.getPoint("浙江省温州乐清市柳市镇xxx工业区", function(point) {
+										if (point) {
+
+											var marker = new BMap.Marker(point); // 创建标注
+											map.addOverlay(marker); // 将标注添加到地图中
+											map.centerAndZoom(point, 17);
+											var opts = {
+												width: 200, // 信息窗口宽度
+												height: 130, // 信息窗口高度
+												title: "乐清××××电气有限公司", // 信息窗口标题
+												enableMessage: true, //设置允许信息窗发送短息
+												message: "把您的需求告诉我们，让我们优秀的团队为您服务？戳下面的链接看下地址喔~"
+											}
+											var infoWindow = new BMap.InfoWindow(
+												"<div style='font-size:12px;line-height:1.8'>全国400客服热线：400&#215;&#215;&#215;&#215;888 <br/> 地址：浙江省温州乐清市柳市镇xxx工业区 <br/> 联系电话：0577-&#215;&#215;&#215;&#215;&#215;888 <br/> 邮箱：xxxxxxx@qq.com <br/> 传真：0577-&#215;&#215;&#215;&#215;&#215;999 </div>",
+												opts); // 创建信息窗口对象 
+											marker.addEventListener("click", function() {
+												map.openInfoWindow(infoWindow, point); //开启信息窗口
+											});
+										}
+									},
+									"China");
+							</script>
+						</div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+{include file=foot.html}

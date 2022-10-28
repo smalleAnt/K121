@@ -1,0 +1,73 @@
+		<footer>
+			<div class="box_contact">
+				<div class="qrcode"><img src="{pboot:companyweixin}" alt="" /></div>
+				<div class="box_3 follow">
+					<div class="bhead"><strong class="hidden-xs">Wechat</strong></div>
+					<div class="bbody">
+						<ul>
+							<li class="wechat"><a href="#" data-am-modal="{target: '#your-modal'}"><i class="iconfont icon-weixin"></i></a></li>
+							<li class="weibo"><a href="https://weibo.com/" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="box_3 contact">
+					<div class="bhead"><strong>Contact Information</strong></div>
+					<div class="bbody">
+						<ul>
+							<li>Email：{pboot:companyemail}</li>
+                              <li>Tel：{pboot:companyphone}</li>
+                              <li>Add：{pboot:companyaddress}</li>
+                              <li>Mobile：{pboot:companymobile}</li>
+                              <li>Web：{pboot:httpurl}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<nav class="nav_footer">
+				{pboot:nav num=6}
+				<dl>
+					
+					<dt><a href="[nav:link]" title="[nav:name]">[nav:name]</a></dt>
+					{pboot:2nav parent=[nav:scode]}
+					<dd><a href="[2nav:link]" title="[2nav:name]">[2nav:name]</a></dd>
+					{/pboot:2nav}
+				</dl>
+				{/pboot:nav}
+				
+			</nav>
+			<div class="footer_info">{pboot:sitecopyright}</div>
+		</footer>
+		<div id="open_im" class="icon_contact"><i class="iconfont icon-ziyuan"></i></div>
+		<div class="box_contact_sidebar" id="im_main">
+			<div class="bhead"> <strong>Contact Us</strong>
+				<div id="close_im" class="close-im"><a href="javascript:void(0);" title="Close"></a></div>
+			</div>
+			<div class="bbody">
+				<dl>
+					<dt>Tel</dt>
+					<dd>{pboot:companyphone}</dd>
+				</dl>
+				<dl>
+					<dt>Wechat</dt>
+					<dd><img src="{pboot:companyweixin}" alt="Wechat" /></dd>
+				</dl>
+			</div>
+		</div>
+		<div data-am-widget="gotop" class="am-gotop am-gotop-fixed"> <a href="#top" title="Top"> <span class="am-gotop-title">Top</span>
+				<i class="iconfont icon-xiangshang"></i> </a> </div>
+		<div class="am-modal am-modal-no-btn" tabindex="-1" id="your-modal">
+			<div class="am-modal-dialog" style="padding: 40px 0;"><img src="{pboot:companyweixin}" width="160" height="160"
+				 alt="Wechat" /><br />
+				Wechat</div>
+		</div>
+		
+		<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default">
+			<ul class="am-navbar-nav am-cf am-avg-sm-4">
+				<li><a href="tel:{pboot:companyphone}"><span class="iconfont icon-dianhua"></span><span class="am-navbar-label">Tel</span></a></li>
+				<li data-am-navbar-share><a href="###" class=""><span class="iconfont icon-share"></span><span class="am-navbar-label">Share</span></a></li>
+				<li data-am-navbar-qrcode><a href="###" class=""><span class="iconfont icon-ico"></span><span class="am-navbar-label">Scan</span></a></li>
+			</ul>
+		</div>
+
+	</body>
+</html>

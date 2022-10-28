@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+<title>{pboot:sitetitle}</title>
+<meta name="keywords" content="{pboot:sitekeywords}">
+<meta name="description" content="{pboot:sitedescription}">
+<meta name="author" content="www.adminbuy.cn K121" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/amazeui.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/css.css">
+<script src="{pboot:sitedomain}/style/js/jquery.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/amazeui.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/jquery.superslide.js"></script>
+<script src="{pboot:sitedomain}/style/js/sidebar_contact.js"></script>
+<style type="text/css">
+.page_main img {
+	width: 100%;
+}
+.iconfont {
+	font-size: 30px !important;
+}
+.icon_contact .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-default .am-navbar-nav .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-nav a {
+	line-height: 27px;
+}
+</style>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1976070_oklai9ulpl8.css">
+</head>
+<body>
+{include file=head.html}
+<link rel="stylesheet" type="text/css" href="{pboot:sitedomain}/css/fsgallery.css" />
+<script type="text/javascript" src="{pboot:sitedomain}/style/js/fs_forse.js"></script>
+<div class="slider am-slider">
+  <ul class="am-slides">
+    {pboot:slide gid=2 num=10}
+    <li class="slider_1"><img src="[slide:src]"></li>
+    {/pboot:slide}
+  </ul>
+</div>
+<script type="text/javascript">
+			$(function() {
+				$('.slider').flexslider({
+					// options
+				});
+			});
+		</script>
+<div class="edge">
+  <ul>
+    <li> <a href="javascript:;" > <strong>Complete scientific</strong> <span>Management strategy</span> </a> </li>
+    <li> <a href="javascript:;" > <strong>Fair and rigorous</strong> <span>Humanistic management strategy</span> </a> </li>
+    <li> <a href="javascript:;" > <strong>Keep improving</strong> <span>Technology leading strategy</span> </a> </li>
+    <li> <a href="javascript:;" > <strong>Reliable and accurate</strong> <span>Measuring and testing equipment</span> </a> </li>
+  </ul>
+</div>
+{pboot:sort scode=23}
+<div class="box_1 product">
+  <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> <span>  <a href="[sort:link]" title="more">more</a>  </span> </div>
+  <div class="bbody">
+    <ul>
+      {pboot:list scode=23 num=8 order=sorting}
+      <li>
+        <figure> <a href="[list:link]" title="[list:title]"> <img src="[list:ico]" alt="[list:title]"> </a>
+          <figcaption> <a href="[list:link]" title="[list:title]">[list:title]</a> </figcaption>
+        </figure>
+      </li>
+      {/pboot:list}
+    </ul>
+  </div>
+</div>
+{/pboot:sort}
+{pboot:sort scode=24}
+<div class="box_1 works">
+  <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> </div>
+  <div class="bbody">
+    <ul id="gallery">
+      {pboot:list scode=24 num=4 order=sorting}
+      <li><a href="[list:ico]" title="[list:title]"><img src="[list:ico]">
+        <p class="am-text-center">[list:title]</p>
+        </a></li>
+      {/pboot:list}
+    </ul>
+  </div>
+</div>
+{/pboot:sort}
+<div class="wrap">
+  <div class="am-container">
+    {pboot:sort scode=22}
+    <div class="box_2 news am-u-lg-7">
+      <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> <span>  <a href="[sort:link]" title="more">more</a>  </span> </div>
+      <div class="bbody">
+        <div class="news_img am-cf"> {pboot:list scode=22 num=1 isico=1}
+          <figure> <a href="[list:link]" class="am-align-left am-hide-sm" title="[list:title]"> <img src="[list:ico]" alt="[list:title]"> </a>
+            <figcaption class=""> <a href="[list:link]" title="[list:title]">[list:title]</a> <i class="am-hide-sm">[list:date style="Y-m-d"]</i> <span title="[list:title]">[list:description lencn=100]</span> </figcaption>
+          </figure>
+          {/pboot:list} </div>
+        <div class="news_txt">
+          <ul>
+            {pboot:list scode=22 num=6 order=sorting}
+            <li><i class="am-hide-sm">[list:date style="Y-m-d"]</i><a href="[list:link]" title="[list:title]">[list:title]</a></li>
+            {/pboot:list}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {/pboot:sort}
+    {pboot:sort scode=21}
+    <div class="box_2 about am-u-lg-5">
+      <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i><span>  <a href="[sort:link]" title="more">more</a>  </span> </div>
+      <div class="bbody">
+        {pboot:content id=461}
+        <div class="about_video"> <img src="[content:ico]"> </div>
+        <div class="about_txt">[content:content drophtml=1 dropblank=1 lencn=110]</div>
+        {/pboot:content}
+      </div>
+    </div>
+    {/pboot:sort}
+  </div>
+</div>
+<div class="partners">
+  <div class="bhead"><strong>Links</strong></div>
+  <div class="bbody">
+    <ul>
+      {pboot:link gid=1}
+      <li><a href="[link:link]" target="_blank">[link:name]</a></li>
+      {/pboot:link}
+    </ul>
+  </div>
+</div>
+{include file=foot.html} 

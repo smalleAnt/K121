@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+<title>{content:title}-{pboot:sitetitle}</title>
+<meta name="keywords" content="{content:keywords}">
+<meta name="description" content="{content:description}">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/amazeui.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/css.css">
+<script src="{pboot:sitedomain}/style/js/jquery.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/amazeui.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/jquery.superslide.js"></script>
+<script src="{pboot:sitedomain}/style/js/sidebar_contact.js"></script>
+<style type="text/css">
+.iconfont {
+	font-size: 30px !important;
+}
+.icon_contact .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-default .am-navbar-nav .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-nav a {
+	line-height: 27px;
+}
+</style>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1976070_oklai9ulpl8.css">
+</head>
+<body>
+{include file=head.html}
+{include file=top.html}
+<div class="page_main">
+  <div class="article_article">
+    <h1>{content:title}</h1>
+    <div class="article_info">来源：{content:source} 发布时间：{content:date}</div>
+    <div class="article_body" id="maximg"> {content:content} </div>
+    <div class="pre_next">
+      <div id="prev">上一篇：{content:precontent}</div>
+      <div id="next">下一篇：{content:nextcontent}</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{include file=foot.html} 

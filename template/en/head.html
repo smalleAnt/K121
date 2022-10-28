@@ -1,0 +1,56 @@
+<header data-am-sticky>
+  <div class="logo"><a href="{pboot:sitedomain}/" ><img src="{pboot:sitelogo}"></a></div>
+  <div class="language">
+    <ul>
+      <li><a href="{pboot:lgpath}&lg=cn" title="中文"><img src="{pboot:sitedomain}/style/images/cn.png" style="width: 32px;" alt=""></a></li>
+    </ul>
+  </div>
+  <nav data-am-widget="menu" class="nav_m am-menu am-menu-offcanvas1" data-am-menu-offcanvas> <a href="javascript:void(0)"
+				 class="am-menu-toggle"><i class=" iconfont icon-mianbaoxie"></i></a>
+    <div class="am-offcanvas">
+      <div class="am-offcanvas-bar am-offcanvas-bar-flip">
+        <ul>
+          <li {pboot:if(0=='{sort:tcode}')} class="current" {/pboot:if}><a href="{pboot:sitedomain}/">HOME</a></li>
+          {pboot:nav}
+          <li {pboot:if('[nav:scode]'=='{sort:tcode}')} class="current" {/pboot:if}><a href="[nav:link]" title="[nav:name]">[nav:name]</a></li>
+          {/pboot:nav}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <nav class="nav_pc">
+    <ul>
+      <li class="nLi {pboot:if(0=='{sort:tcode}')} active {/pboot:if}">
+        <h3><a href="{pboot:sitedomain}/">HOME</a></h3>
+      </li>
+      {pboot:nav}
+      <li class="nLi {pboot:if('[nav:scode]'=='{sort:tcode}')} active {/pboot:if}">
+        <h3><a href="[nav:link]" title="[nav:name]">[nav:name]</a></h3>
+        {pboot:if([nav:soncount]>0)}
+        <ul class="sub">
+          {pboot:2nav parent=[nav:scode]}
+          <li><a href="[2nav:link]" title="[2nav:name]">[2nav:name]</a></li>
+          {/pboot:2nav}
+        </ul>
+        {/pboot:if} </li>
+      {/pboot:nav}
+    </ul>
+  </nav>
+  <script type="text/javascript">
+				jQuery(".nav_pc").slide({
+					type: "menu",
+					titCell: ".nLi",
+					targetCell: ".sub",
+					effect: "slideDown",
+					delayTime: 300,
+					triggerTime: 0,
+					returnDefault: true
+				});
+			</script> 
+</header>
+<script type="text/javascript">
+			function NavDown(i) {
+				$(".nav_pc > ul > li").eq(i).addClass("on");
+			}
+			NavDown(0);
+		</script> 

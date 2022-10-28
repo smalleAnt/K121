@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+<title>{content:title}-{pboot:sitetitle}</title>
+<meta name="keywords" content="{content:keywords}">
+<meta name="description" content="{content:description}">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/amazeui.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/css.css">
+<script src="{pboot:sitedomain}/style/js/jquery.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/amazeui.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/jquery.superslide.js"></script>
+<script src="{pboot:sitedomain}/style/js/sidebar_contact.js"></script>
+<style type="text/css">
+.iconfont {
+	font-size: 30px !important;
+}
+.icon_contact .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-default .am-navbar-nav .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-nav a {
+	line-height: 27px;
+}
+</style>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1976070_oklai9ulpl8.css">
+</head>
+<body>
+{include file=head.html}
+{include file=top.html}
+<div class="page_main">
+    <div class="article_article">
+    <div class="article_body">
+        <div class="pdbaseinfo am-g">
+        <div class="pimg am-u-md-5 am-u-sm-12">
+            <div class="am-slider am-slider-default">
+            <ul class="am-slides">
+                {pboot:if('{content:ispics}'==0)}
+                <li><img alt="" src="{content:ico}"></li>
+                {else}
+                {pboot:pics num=10 id={content:id}}
+                <li><img alt="" src="[pics:src]"></li>
+                {/pboot:pics}
+                {/pboot:if}
+              </ul>
+          </div>
+          </div>
+        <div class="am-u-md-7 am-u-sm-12">
+            <h2 class="am-margin-bottom-xs">{content:title}</h2>
+<!--            <p> 所属分类：{pboot:sort scode={sort:scode}} <a href="[sort:link]">[sort:name]</a> {/pboot:sort} </p>-->
+<!--            <p>产品简介：{content:description}</p>-->
+            <p><b>◆型号：</b>{content:model}</p>
+            <p><b>◆尺寸：</b>{content:size}</p>
+            <p><b>◆分辨率：</b>{content:resolution_ratio}</p>
+            <p><b>◆视角：</b>{content:view_angle}</p>
+            <p><b>◆接口：</b>{content:interface}</p>
+            <p><b>◆驱动IC：</b>{content:ic}</p>
+            <p><b>◆亮度(cd/m²)：</b>{content:size}</p>
+            <p><b>◆触控屏：</b>{content:touch_screen}</p>
+            <p><b>◆控制板：</b>{content:control_panel}</p>
+          </div>
+      </div>
+        <h4>产品详情</h4>
+        <div class="pro_intro" id="maximg"> {content:content} </div>
+      </div>
+    <div class="pre_next">
+        <div id="prev">上一个：{content:precontent}</div>
+        <div id="next">下一个：{content:nextcontent}</div>
+      </div>
+    <script type="text/javascript">
+		$(window).ready(function(){
+			var img_src = [];
+			var arr = $("pro_intro").children().children('img')
+			console.log(arr)
+			for(var i =0;i<arr.length;i++){
+				arr[i] = arr[i].src.slice(21)
+				arr[i] = '.' + arr[i]	
+				$(".pro_intro").children().children('img')[i].src = arr[i]
+			}
+		})
+	</script> 
+  </div>
+  </div>
+</div>
+</div>
+{include file=foot.html} 
+<script>
+  $(function($) {
+  $('.am-slider').flexslider();
+});
+  </script>

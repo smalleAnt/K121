@@ -1,0 +1,56 @@
+		<div class="banner banner_1">
+			{pboot:sort scode={sort:tcode}}
+			<img src="[sort:pic]">
+			{/pboot:sort}
+		</div>
+		<div class="main">
+			<div class="mli">
+				<div class="category">
+					<div class="catname"> 
+						{pboot:sort scode={sort:tcode}}
+						<strong> [sort:name] </strong> 
+						{/pboot:sort}
+					</div>
+					<div class="subcat">
+						{pboot:nav parent={sort:tcode}}
+						<dl {pboot:if('[nav:scode]'=='{sort:scode}')} class="current" {/pboot:if}>
+							<dt><a href="[nav:link]" title="[nav:name]">[nav:name]</a></dt>
+						</dl>
+						{/pboot:nav}
+					</div>
+				</div>
+				<style type="text/css">
+					@media screen and (max-width: 767px){
+						.xs-hidden{
+							display: none;
+						}
+					}
+				</style>
+				<div class="category xs-hidden">
+					<div class="catname">
+						<strong>Contact Us</strong>
+					</div>
+					<div class="subcat">
+
+						<dl>
+							<dt><a href="javascript:;">contact:{pboot:companycontact}</a></dt>
+						</dl>
+						<dl>
+							<dt><a href="javascript:;">Mobile:{pboot:companymobile}</a></dt>
+						</dl>
+						<dl>
+							<dt><a href="javascript:;">Tel:{pboot:companyphone}</a></dt>
+						</dl>
+						<dl>
+							<dt><a href="javascript:;">Fax:{pboot:companyfax}</a></dt>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="mri">
+				<div class="position">Location：{pboot:position indextext='Home' separator='>'}</div>
+				<div class="page_title">
+					{pboot:sort scode={sort:scode}}
+					<strong>[sort:name]</strong>
+					{/pboot:sort}
+				</div>

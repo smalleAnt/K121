@@ -1,0 +1,39 @@
+<div class="banner banner_1"> {pboot:sort scode={sort:tcode}} <img src="[sort:pic]"> {/pboot:sort} </div>
+<div class="main">
+<div class="mli">
+  <div class="category">
+    <div class="catname"> {pboot:sort scode={sort:tcode}} <strong> [sort:name] </strong> {/pboot:sort} </div>
+    <div class="subcat"> {pboot:nav parent={sort:tcode}}
+      <dl {pboot:if('[nav:scode]'=='{sort:scode}')} class="current" {/pboot:if}>
+        <dt><a href="[nav:link]" title="[nav:name]">[nav:name]</a></dt>
+      </dl>
+      {/pboot:nav} </div>
+  </div>
+  <style type="text/css">
+					@media screen and (max-width: 767px){
+						.xs-hidden{
+							display: none;
+						}
+					}
+				</style>
+  <div class="category xs-hidden">
+    <div class="catname"> <strong>联系我们</strong> </div>
+    <div class="subcat">
+      <dl>
+        <dt><a href="javascript:;">联系人：{pboot:companycontact}</a></dt>
+      </dl>
+      <dl>
+        <dt><a href="javascript:;">手机：{pboot:companymobile}</a></dt>
+      </dl>
+      <dl>
+        <dt><a href="javascript:;">电话：{pboot:companyphone}</a></dt>
+      </dl>
+      <dl>
+        <dt><a href="javascript:;">邮箱：{pboot:companyemail}</a></dt>
+      </dl>
+    </div>
+  </div>
+</div>
+<div class="mri">
+<div class="position">当前位置：{pboot:position indextext='首页' separator='>'}</div>
+<div class="page_title"> {pboot:sort scode={sort:scode}} <strong>[sort:name]</strong> {/pboot:sort} </div>

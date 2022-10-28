@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+<title>{pboot:sitetitle}</title>
+<meta name="keywords" content="{pboot:sitekeywords}">
+<meta name="description" content="{pboot:sitedescription}">
+<meta name="author" content="www.adminbuy.cn K121" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/amazeui.min.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/style.css">
+<link rel="stylesheet" href="{pboot:sitedomain}/style/css/css.css">
+<script src="{pboot:sitedomain}/style/js/jquery.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/amazeui.min.js"></script>
+<script src="{pboot:sitedomain}/style/js/jquery.superslide.js"></script>
+<script src="{pboot:sitedomain}/style/js/sidebar_contact.js"></script>
+<style type="text/css">
+.page_main img {
+	width: 100%;
+}
+.iconfont {
+	font-size: 30px !important;
+}
+.icon_contact .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-default .am-navbar-nav .iconfont {
+	font-size: 20px !important;
+}
+.am-navbar-nav a {
+	line-height: 27px;
+}
+</style>
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1976070_oklai9ulpl8.css">
+</head>
+<body>
+{include file=head.html}
+<link rel="stylesheet" type="text/css" href="{pboot:sitedomain}/style/css/fsgallery.css" />
+<script type="text/javascript" src="{pboot:sitedomain}/style/js/fs_forse.js"></script>
+<div class="slider am-slider">
+  <ul class="am-slides">
+    {pboot:slide gid=1 num=10}
+    <li class="slider_1"><a href="[slide:link]" target="_blank"><img src="[slide:src]"></a></li>
+    {/pboot:slide}
+  </ul>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$('.slider').flexslider({
+			// options
+		});
+	});
+</script>
+<div class="edge">
+  <ul>
+    <li> <a href="javascript:;" title="完整科学的"> <strong>完整科学的</strong> <span>经营管理战略</span> </a> </li>
+    <li> <a href="javascript:;" title="公平严谨的"> <strong>公平严谨的</strong> <span>人本管理战略</span> </a> </li>
+    <li> <a href="javascript:;" title="精益求精的"> <strong>精益求精的</strong> <span>技术先导战略</span> </a> </li>
+    <li> <a href="javascript:;" title="可靠精准的"> <strong>可靠精准的</strong> <span>测量检测设备</span> </a> </li>
+  </ul>
+</div>
+{pboot:sort scode=5}
+<div class="box_1 product">
+  <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> <span>  <a href="[sort:link]" title="查看更多">查看更多</a>  </span> </div>
+  <div class="bbody">
+    <ul>
+      {pboot:list scode=5 num=8 order=sorting}
+      <li>
+        <figure> <a href="[list:link]" title="[list:title]"> <img src="[list:ico]" alt="[list:title]"> </a>
+          <figcaption> <a href="[list:link]" title="[list:title]">[list:title]</a> </figcaption>
+        </figure>
+      </li>
+      {/pboot:list}
+    </ul>
+  </div>
+</div>
+{/pboot:sort}
+{pboot:sort scode=8}
+<div class="box_1 works">
+  <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> </div>
+  <div class="bbody">
+    <ul id="gallery">
+      {pboot:list scode=8 num=4 order=sorting}
+      <li><a href=".[list:ico]" title="[list:title]"><img src="[list:ico]">
+        <p class="am-text-center">[list:title]</p>
+        </a></li>
+      {/pboot:list}
+    </ul>
+  </div>
+</div>
+{/pboot:sort}
+
+<div class="wrap">
+  <div class="am-container">
+    {pboot:sort scode=2}
+    <div class="box_2 news am-u-lg-7">
+      <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> <span><a href="[sort:link]" title="查看更多">查看更多</a></span> </div>
+      <div class="bbody">
+        <div class="news_img am-cf"> 
+        {pboot:list scode=2 num=1 isico=1}
+          <figure> <a href="[list:link]" class="am-align-left am-hide-sm" title="[list:title]"> <img src="[list:ico]" alt="[list:title]"> </a>
+            <figcaption class=""> <a href="[list:link]" title="[list:title]">[list:title]</a> <i class="am-hide-sm">[list:date style="Y-m-d"]</i> <span title="[list:title]">[list:description lencn=30]</span> </figcaption>
+          </figure>
+          {/pboot:list} </div>
+        <div class="news_txt">
+          <ul>
+            {pboot:list scode=2 num=6 order=sorting}
+            <li><i class="am-hide-sm">[list:date style="Y-m-d"]</i><a href="[list:link]" title="[list:title]">[list:title]</a></li>
+            {/pboot:list}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {/pboot:sort}
+    {pboot:sort scode=1}
+    <div class="box_2 about am-u-lg-5">
+      <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> <span>  <a href="[sort:link]" title="查看更多">查看更多</a>  </span> </div>
+      <div class="bbody">
+        {pboot:content id=459}
+        <div class="about_video"> <img src="[content:ico]"> </div>
+        <div class="about_txt">[content:content drophtml=1 dropblank=1 lencn=100]</div>
+        {/pboot:content}
+      </div>
+    </div>
+    {/pboot:sort}
+  </div>
+</div>
+<div class="partners">
+  <div class="bhead"><strong>友情链接</strong></div>
+  <div class="bbody">
+    <ul>
+      {pboot:link gid=1}
+      <li><a href="[link:link]" target="_blank">[link:name]</a></li>
+      {/pboot:link}
+    </ul>
+  </div>
+</div>
+{include file=foot.html} 
