@@ -248,7 +248,8 @@ function handle_upload($file, $temp, $array_ext_allow, $max_width, $max_height, 
 {
     // 定义主存储路径
     $save_path = DOC_PATH . STATIC_DIR . '/upload';
-    
+
+    $file_name = $file;
     $file = explode('.', $file); // 分离文件名及扩展
     $file_ext = strtolower(end($file)); // 获取扩展
     
@@ -284,7 +285,8 @@ function handle_upload($file, $temp, $array_ext_allow, $max_width, $max_height, 
     if (! check_dir($save_path . '/' . $file_type . '/' . date('Ymd'), true)) {
         return '存储目录创建失败！';
     }
-    $file_path = $save_path . '/' . $file_type . '/' . date('Ymd') . '/' . time() . mt_rand(100000, 999999) . '.' . $file_ext;
+//    $file_path = $save_path . '/' . $file_type . '/' . date('Ymd') . '/' . time() . mt_rand(100000, 999999) . '.' . $file_ext;
+    $file_path = $save_path . '/' . $file_type . '/' . date('Ymd') . '/' . $file_name;
     if (! move_uploaded_file($temp, $file_path)) { // 从缓存中转存
         return '从缓存中转存失败！';
     }
