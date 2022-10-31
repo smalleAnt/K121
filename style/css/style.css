@@ -100,7 +100,7 @@ nav.nav_pc {
     background: #555;
     color: #ddd;
     opacity: .9;
-    display: block;
+    display: none;
     cursor: pointer;
 }
 .icon_contact:hover {
@@ -3168,7 +3168,7 @@ footer {
     background: #555;
     color: #ddd;
     opacity: .9;
-    display: block;
+    display: none;
     cursor: pointer;
 }
 .icon_contact:hover {
@@ -3186,7 +3186,7 @@ footer {
     right: 10px;
     bottom: 102px;
     z-index: 9999;
-    display: none;
+    display: block;
 }
 .box_contact_sidebar .bhead {
     height: 36px;
