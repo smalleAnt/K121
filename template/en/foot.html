@@ -1,15 +1,24 @@
 		<footer>
 			<div class="box_contact">
-				<div class="qrcode"><img src="{pboot:companyweixin}" alt="" /></div>
-				<div class="box_3 follow">
-					<div class="bhead"><strong class="hidden-xs">Wechat</strong></div>
-					<div class="bbody">
-						<ul>
-							<li class="wechat"><a href="#" data-am-modal="{target: '#your-modal'}"><i class="iconfont icon-weixin"></i></a></li>
-							<li class="weibo"><a href="https://weibo.com/" target="_blank"><i class="iconfont icon-weibo"></i></a></li>
-						</ul>
-					</div>
+<!--				<div class="qrcode"><img src="{pboot:companyweixin}" alt="" /></div>-->
+				<div style="width: 420px;height: 125px;top: 50px;left: 17%;position: absolute;">
+					<img style="width: 120px;height: 120px;margin-right:15px;" src="{pboot:companyweixin}" alt="" />
+					{pboot:if('{pboot:companyqrcode1}' != '')}
+					<img style="width: 120px;height: 120px;margin-right:15px;" src="{pboot:companyqrcode1}" alt="" />
+					{/pboot:if}
+					{pboot:if('{pboot:companyqrcode2}' != '')}
+					<img style="width: 120px;height: 120px;margin-right:15px;" src="{pboot:companyqrcode2}" alt="" />
+					{/pboot:if}
 				</div>
+<!--				<div class="box_3 follow">-->
+<!--					<div class="bhead"><strong class="hidden-xs">Wechat</strong></div>-->
+<!--					<div class="bbody">-->
+<!--						<ul>-->
+<!--							<li class="wechat"><a href="#" data-am-modal="{target: '#your-modal'}"><i class="iconfont icon-weixin"></i></a></li>-->
+<!--							<li class="weibo"><a href="https://weibo.com/" target="_blank"><i class="iconfont icon-weibo"></i></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</div>-->
 				<div class="box_3 contact">
 					<div class="bhead"><strong>Contact Information</strong></div>
 					<div class="bbody">

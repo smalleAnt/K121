@@ -3349,22 +3349,6 @@ footer {
     margin: 0 0 0 -500px;
 }
 
-.qrcode1 {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 52%;
-    margin: 0 0 0 -500px;
-}
-
-.qrcode2 {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 52%;
-    margin: 0 0 0 -500px;
-}
-
 .box_3 {
     color: #FFF;
 }
