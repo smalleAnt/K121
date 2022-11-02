@@ -46,10 +46,12 @@ class CompanyController extends Controller
             'email' => post('email'),
             'qq' => post('qq'),
             'weixin' => post('weixin'),
+            'qrcode1' => post('qrcode1'),
+            'qrcode2' => post('qrcode2'),
             'blicense' => post('blicense'),
             'other' => post('other')
         );
-        
+
         if ($this->model->checkCompany()) {
             if ($this->model->modCompany($data)) {
                 $this->log('修改公司信息成功！');

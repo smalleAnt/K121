@@ -83,6 +83,28 @@
 					 </button>
 					 <div id="weixin_box" class="pic"><dl><dt>{if(@[$companys->weixin])}<img src="{SITE_DIR}{$companys->weixin}" data-url="{$companys->weixin}"></dt><dd>删除</dd></dl>{/if}</div>
                 </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">其他二维码1</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="qrcode1" id="qrcode1" value="{$companys->qrcode1}" placeholder=""  class="layui-input">
+                    </div>
+                    <button type="button" class="layui-btn upload" data-des="qrcode1">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                    <div id="qrcode1_box" class="pic"><dl><dt>{if(@[$companys->qrcode1])}<img src="{SITE_DIR}{$companys->qrcode1}" data-url="{$companys->qrcode1}"></dt><dd>删除</dd></dl>{/if}</div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">其他二维码2</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="qrcode2" id="qrcode2" value="{$companys->qrcode2}" placeholder=""  class="layui-input">
+                    </div>
+                    <button type="button" class="layui-btn upload" data-des="qrcode2">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                    <div id="qrcode2_box" class="pic"><dl><dt>{if(@[$companys->qrcode2])}<img src="{SITE_DIR}{$companys->qrcode2}" data-url="{$companys->qrcode2}"></dt><dd>删除</dd></dl>{/if}</div>
+                </div>
                 
                 <!--<div class="layui-form-item">
                      <label class="layui-form-label">营业执照代码</label>

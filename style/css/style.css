@@ -3348,6 +3348,23 @@ footer {
     top: 50px;
     margin: 0 0 0 -500px;
 }
+
+.qrcode1 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 52%;
+    margin: 0 0 0 -500px;
+}
+
+.qrcode2 {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 52%;
+    margin: 0 0 0 -500px;
+}
+
 .box_3 {
     color: #FFF;
 }
@@ -3399,12 +3416,12 @@ footer {
 .contact {
     width: 53%;
     position: absolute;
-    left: 53%;
+    left: 67%;
     top: 50px;
     margin: 0 0 0 -140px;
 }
 .contact .bbody ul li {
-    width: 50%;
+    width: 35%;
     float: left;
 }
 .nav_footer {
