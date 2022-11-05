@@ -54,16 +54,34 @@
             <h2 class="am-margin-bottom-xs">{content:title}</h2>
 <!--            <p> Classification：{pboot:sort scode={sort:scode}} <a href="[sort:link]">[sort:name]</a> {/pboot:sort} </p>-->
 <!--            <p>Product introduction：{content:description}</p>-->
-            <p><b style="font-size: 20px">◆</b><b> Model No.：</b>{content:model}</p>
-            <p><b style="font-size: 20px">◆</b><b> Size：</b>{content:size}</p>
-            <p><b style="font-size: 20px">◆</b><b> Resolution：</b>{content:resolution_ratio}</p>
-            <p><b style="font-size: 20px">◆</b><b> View Direction：</b>{content:view_angle}</p>
-            <p><b style="font-size: 20px">◆</b><b> Interface：</b>{content:interface}</p>
-            <p><b style="font-size: 20px">◆</b><b> Driver IC：</b>{content:ic}</p>
-            <p><b style="font-size: 20px">◆</b><b> Brightness(cd/m²)：</b>{content:size}</p>
-            <p><b style="font-size: 20px">◆</b><b> Touch Screen：</b>{content:touch_screen}</p>
-            <p><b style="font-size: 20px">◆</b><b> Control-Board：</b>{content:control_panel}</p>
-            <p><b style="font-size: 20px">◆</b><b> Attached File：</b><a href="{content:ext_wj}" title="{content:ext_wj_name}" target="_blank">{content:ext_wj_name}</a></p>
+            {pboot:if('{content:model}' != '')}
+            <p><b> {content:model}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:size}' != '')}
+            <p><b> {content:size}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:resolution_ratio}' != '')}
+            <p><b> {content:resolution_ratio}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:view_angle}' != '')}
+            <p><b> {content:view_angle}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:interface}' != '')}
+            <p><b> {content:interface}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:ic}' != '')}
+            <p><b> {content:ic}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:brightness}' != '')}
+            <p><b> {content:brightness}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:touch_screen}' != '')}
+            <p><b> {content:touch_screen}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:control_panel}' != '')}
+            <p><b> {content:control_panel}</b></p>
+            {/pboot:if}
+<!--            <p><b style="font-size: 20px">◆</b><b> Attached File：</b><a href="{content:ext_wj}" title="{content:ext_wj_name}" target="_blank">{content:ext_wj_name}</a></p>-->
             <div style="margin-top: 30px">
                 <div>Prev：{content:precontent notext='no more'}</div>
                 <div>Next：{content:nextcontent notext='no more'}</div>

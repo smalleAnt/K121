@@ -54,16 +54,34 @@
             <h2 class="am-margin-bottom-xs">{content:title}</h2>
 <!--            <p> 所属分类：{pboot:sort scode={sort:scode}} <a href="[sort:link]">[sort:name]</a> {/pboot:sort} </p>-->
 <!--            <p>产品简介：{content:description}</p>-->
-            <p><b style="font-size: 20px">◆</b><b> 型号：{content:model}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 尺寸：{content:size}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 分辨率：{content:resolution_ratio}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 视角：{content:view_angle}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 接口：{content:interface}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 驱动IC：{content:ic}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 亮度(cd/m²)：{content:size}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 触控屏：{content:touch_screen}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 控制板：{content:control_panel}</b></p>
-            <p><b style="font-size: 20px">◆</b><b> 附件：</b><a href="{content:ext_wj}" title="{content:ext_wj_name}" target="_blank">{content:ext_wj_name}</a></p>
+            {pboot:if('{content:model}' != '')}
+            <p><b> {content:model}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:size}' != '')}
+            <p><b> {content:size}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:resolution_ratio}' != '')}
+            <p><b> {content:resolution_ratio}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:view_angle}' != '')}
+            <p><b> {content:view_angle}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:interface}' != '')}
+            <p><b> {content:interface}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:ic}' != '')}
+            <p><b> {content:ic}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:brightness}' != '')}
+            <p><b> {content:brightness}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:touch_screen}' != '')}
+            <p><b> {content:touch_screen}</b></p>
+            {/pboot:if}
+            {pboot:if('{content:control_panel}' != '')}
+            <p><b> {content:control_panel}</b></p>
+            {/pboot:if}
+<!--            <p><b style="font-size: 20px">◆</b><b> 附件：</b><a href="{content:ext_wj}" title="{content:ext_wj_name}" target="_blank">{content:ext_wj_name}</a></p>-->
             <div style="margin-top: 30px">
                 <div>上一个：{content:precontent}</div>
                 <div>下一个：{content:nextcontent}</div>
