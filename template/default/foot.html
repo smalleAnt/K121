@@ -1,26 +1,34 @@
 <footer>
   <div class="box_contact">
 <!--    <div class="qrcode"><img src="{pboot:companyweixin}" alt="" /></div>-->
-    <div style="width: 405px;height: 125px;top: 32px;left: 17%;position: absolute;display: inherit">
+    <div class="qrcode-list">
       {pboot:if('{pboot:companyqrcode1}' != '')}
       <div class="box_3" style="width: 120px;margin-right:15px;text-align: center;">
         <img style="width: 120px;height: 120px;" src="{pboot:companyqrcode1}" alt="" />
-        <div class="bhead"><strong class="hidden-xs">{pboot:companyqrcode1_name}</strong></div>
+        <div class="bhead"><strong class="hidden-xs" style="font-size: 1.4rem">{pboot:companyqrcode1_name}</strong></div>
       </div>
       {/pboot:if}
       {pboot:if('{pboot:companyqrcode2}' != '')}
       <div class="box_3" style="width: 120px;margin-right:15px;text-align: center;">
         <img style="width: 120px;height: 120px;" src="{pboot:companyqrcode2}" alt="" />
-        <div class="bhead"><strong class="hidden-xs">{pboot:companyqrcode2_name}</strong></div>
+        <div class="bhead"><strong class="hidden-xs" style="font-size: 1.4rem">{pboot:companyqrcode2_name}</strong></div>
       </div>
       {/pboot:if}
       {pboot:if('{pboot:companyqrcode3}' != '')}
       <div class="box_3" style="width: 120px;margin-right:15px;text-align: center;">
         <img style="width: 120px;height: 120px;" src="{pboot:companyqrcode3}" alt="" />
-        <div class="bhead"><strong class="hidden-xs">{pboot:companyqrcode3_name}</strong></div>
+        <div class="bhead"><strong class="hidden-xs" style="font-size: 1.4rem">{pboot:companyqrcode3_name}</strong></div>
       </div>
       {/pboot:if}
     </div>
+
+    {pboot:if('{pboot:companyqrcode1}' != '')}
+    <div class="box_3 show_qrcode" style="width: 120px;margin-right:15px;text-align: center;">
+      <img style="width: 120px;height: 120px;" src="{pboot:companyqrcode1}" alt="" />
+      <div class="bhead"><strong style="font-size: 1.4rem">{pboot:companyqrcode1_name}</strong></div>
+    </div>
+    {/pboot:if}
+
 <!--    <div class="box_3 follow">-->
 <!--      <div class="bhead"><strong class="hidden-xs">微信公众号</strong></div>-->
 <!--      <div class="bbody">-->

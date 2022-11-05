@@ -81,7 +81,13 @@
             {pboot:if('{content:control_panel}' != '')}
             <p><b> {content:control_panel}</b></p>
             {/pboot:if}
-<!--            <p><b style="font-size: 20px">◆</b><b> 附件：</b><a href="{content:ext_wj}" title="{content:ext_wj_name}" target="_blank">{content:ext_wj_name}</a></p>-->
+            {pboot:if('{content:ext_wj}' != '')}
+            <p>
+                <a href="{content:ext_wj}" title="{content:ext_wj_name}" target="_blank">
+                <img src="/static/images/ext_wj.png" style=" width:auto;height:auto;max-width:50%;max-height:50%;" alt="" />
+                </a>
+            </p>
+            {/pboot:if}
             <div style="margin-top: 30px">
                 <div>上一个：{content:precontent}</div>
                 <div>下一个：{content:nextcontent}</div>

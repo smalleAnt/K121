@@ -663,6 +663,14 @@ footer {
     top: 50px;
 }
 
+.qrcode-list {
+    width: 405px;
+    height: 125px;
+    top: 32px;
+    left: 17%;
+    position: absolute;
+    display: inherit;
+}
 .box_3 {
     color: #FFF;
 }
@@ -1624,6 +1632,12 @@ footer {
 }
 .qrcode {
     display: none;
+}
+.qrcode-list {
+    display: none;
+}
+.show_qrcode {
+    display: block;
 }
 .box_3 {
     color: #FFF;
@@ -3349,6 +3363,17 @@ footer {
     margin: 0 0 0 -500px;
 }
 
+.qrcode-list {
+    width: 405px;
+    height: 125px;
+    top: 32px;
+    left: 17%;
+    position: absolute;
+    display: inherit;
+}
+.show_qrcode {
+    display: none;
+}
 .box_3 {
     color: #FFF;
 }
