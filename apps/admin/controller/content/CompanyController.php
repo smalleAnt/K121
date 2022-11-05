@@ -46,8 +46,12 @@ class CompanyController extends Controller
             'email' => post('email'),
             'qq' => post('qq'),
             'weixin' => post('weixin'),
+            'qrcode1_name' => post('qrcode1_name'),
             'qrcode1' => post('qrcode1'),
+            'qrcode2_name' => post('qrcode2_name'),
             'qrcode2' => post('qrcode2'),
+            'qrcode3_name' => post('qrcode3_name'),
+            'qrcode3' => post('qrcode3'),
             'blicense' => post('blicense'),
             'other' => post('other')
         );

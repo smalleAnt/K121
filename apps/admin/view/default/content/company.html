@@ -73,19 +73,25 @@
                      </div>
                 </div>
 
-                <div class="layui-form-item">
-                     <label class="layui-form-label">微信二维码</label>
-                     <div class="layui-input-inline">
-                     	<input type="text" name="weixin" id="weixin" value="{$companys->weixin}" placeholder=""  class="layui-input">
-                     </div>
-                     <button type="button" class="layui-btn upload" data-des="weixin">
-					 	 <i class="layui-icon">&#xe67c;</i>上传图片
-					 </button>
-					 <div id="weixin_box" class="pic"><dl><dt>{if(@[$companys->weixin])}<img src="{SITE_DIR}{$companys->weixin}" data-url="{$companys->weixin}"></dt><dd>删除</dd></dl>{/if}</div>
-                </div>
+<!--                <div class="layui-form-item">-->
+<!--                     <label class="layui-form-label">微信二维码</label>-->
+<!--                     <div class="layui-input-inline">-->
+<!--                     	<input type="text" name="weixin" id="weixin" value="{$companys->weixin}" placeholder=""  class="layui-input">-->
+<!--                     </div>-->
+<!--                     <button type="button" class="layui-btn upload" data-des="weixin">-->
+<!--					 	 <i class="layui-icon">&#xe67c;</i>上传图片-->
+<!--					 </button>-->
+<!--					 <div id="weixin_box" class="pic"><dl><dt>{if(@[$companys->weixin])}<img src="{SITE_DIR}{$companys->weixin}" data-url="{$companys->weixin}"></dt><dd>删除</dd></dl>{/if}</div>-->
+<!--                </div>-->
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">其他二维码1</label>
+                    <label class="layui-form-label">二维码1名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="qrcode1_name" value="{$companys->qrcode1_name}" placeholder=""  class="layui-input" style="width: 18.5%">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">二维码1</label>
                     <div class="layui-input-inline">
                         <input type="text" name="qrcode1" id="qrcode1" value="{$companys->qrcode1}" placeholder=""  class="layui-input">
                     </div>
@@ -96,7 +102,13 @@
                 </div>
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">其他二维码2</label>
+                    <label class="layui-form-label">二维码2名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="qrcode2_name" value="{$companys->qrcode2_name}" placeholder=""  class="layui-input"  style="width: 18.5%">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">二维码2</label>
                     <div class="layui-input-inline">
                         <input type="text" name="qrcode2" id="qrcode2" value="{$companys->qrcode2}" placeholder=""  class="layui-input">
                     </div>
@@ -104,6 +116,23 @@
                         <i class="layui-icon">&#xe67c;</i>上传图片
                     </button>
                     <div id="qrcode2_box" class="pic"><dl><dt>{if(@[$companys->qrcode2])}<img src="{SITE_DIR}{$companys->qrcode2}" data-url="{$companys->qrcode2}"></dt><dd>删除</dd></dl>{/if}</div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">二维码3名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="qrcode3_name" value="{$companys->qrcode3_name}" placeholder=""  class="layui-input"  style="width: 18.5%">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">二维码3</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="qrcode3" id="qrcode3" value="{$companys->qrcode3}" placeholder=""  class="layui-input">
+                    </div>
+                    <button type="button" class="layui-btn upload" data-des="qrcode3">
+                        <i class="layui-icon">&#xe67c;</i>上传图片
+                    </button>
+                    <div id="qrcode3_box" class="pic"><dl><dt>{if(@[$companys->qrcode3])}<img src="{SITE_DIR}{$companys->qrcode3}" data-url="{$companys->qrcode3}"></dt><dd>删除</dd></dl>{/if}</div>
                 </div>
                 
                 <!--<div class="layui-form-item">
