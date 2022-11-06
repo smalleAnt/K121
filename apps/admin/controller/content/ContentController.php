@@ -49,7 +49,10 @@ class ContentController extends Controller
                 $result = $this->model->getList($mcode);
             }
             $this->assign('contents', $result);
-            
+            //查询附件
+            $file = $this->model->getListNotPage(7);
+            $this->assign('file_select', $this->makeFileSelect($file));
+
             // 文章分类下拉列表
             $sort_model = model('admin.content.ContentSort');
             $sort_select = $sort_model->getListSelect($mcode);
@@ -188,6 +191,73 @@ class ContentController extends Controller
                 'create_user' => session('username'),
                 'update_user' => session('username')
             );
+
+            //重新提交
+            if (post('reload_ext_wj')) {
+                $fileArr = pathinfo(post('reload_ext_wj'));
+                //创建记录
+                $fileData = array(
+                    'acode' => session('acode'),
+                    'scode' => 39,
+                    'subscode' => '',
+                    'title' => $fileArr['filename'],
+                    'titlecolor' => $titlecolor,
+                    'subtitle' => '',
+                    'filename' => '',
+                    'author' => $author,
+                    'source' => $source,
+                    'outlink' => '',
+                    'date' => $date,
+                    'ico' => '',
+                    'pics' => '',
+                    'picstitle' => '',
+                    'content' => '',
+                    'tags' => '',
+                    'enclosure' => '',
+                    'keywords' => '',
+                    'description' => '',
+                    'sorting' => 255,
+                    'status' => $status,
+                    'istop' => $istop,
+                    'isrecommend' => $isrecommend,
+                    'isheadline' => $isheadline,
+                    'gid' => $gid,
+                    'gtype' => $gtype,
+                    'gnote' => $gnote,
+                    'visits' => 0,
+                    'likes' => 0,
+                    'oppose' => 0,
+                    'create_user' => session('username'),
+                    'update_user' => session('username')
+                );
+                if (! $id = $this->model->addContent($fileData)) {
+                    $this->log('新增文章失败！');
+                    error('新增失败！', - 1);
+                }
+                $fileData2 = [
+                    'contentid' => $id,
+                    'ext_wj'=>$_POST['reload_ext_wj']
+                ];
+                if (!$this->model->addContentExt($fileData2)) {
+                    $this->log('新增文章失败！');
+                    error('新增失败！', - 1);
+                }
+
+
+                $_POST['ext_wj'] = $_POST['reload_ext_wj'];
+                unset($_POST['ext_wj_id']);
+                unset($_POST['reload_ext_wj']);
+            }
+
+            if (post('ext_wj_id')) {
+                $_POST['ext_wj'] = '';
+                if (! $result = $this->model->getContent(post('ext_wj_id'))) {
+                    $_POST['ext_wj'] = '';
+                }else {
+                    $_POST['ext_wj'] = $result->ext_wj;
+                }
+                unset($_POST['ext_wj_id']);
+            }
             
             // 执行添加
             if (! ! $id = $this->model->addContent($data)) {
@@ -263,6 +333,22 @@ class ContentController extends Controller
         }
         // 循环完后回归位置
         $this->blank = substr($this->blank, 0, - 6);
+        return $list_html;
+    }
+
+    // 生成文件选择
+    private function makeFileSelect($tree, $selectid = null)
+    {
+        $list_html = '';
+        foreach ($tree as $value) {
+            // 默认选择项
+            if (!is_null($selectid) && $selectid == $value->ext_wj) {
+                $select = "selected='selected'";
+            } else {
+                $select = '';
+            }
+            $list_html .= "<option value='{$value->id}' $select>{$value->title}";
+        }
         return $list_html;
     }
 
@@ -418,7 +504,7 @@ class ContentController extends Controller
             }
         }
         $productExtModel = new ProductExtModel();
-        
+        $contentSortModel = model('admin.content.ContentSort');
         // 修改操作
         if ($_POST) {
             
@@ -488,7 +574,75 @@ class ContentController extends Controller
                     $filename = $filename . '-' . mt_rand(1, 20);
                 }
             }
-            
+            $sort = $contentSortModel->getSort($scode);
+
+            //重新提交
+            if (post('reload_ext_wj')) {
+                $fileArr = pathinfo(post('reload_ext_wj'));
+                //创建记录
+                $fileData = array(
+                    'acode' => session('acode'),
+                    'scode' => 39,
+                    'subscode' => '',
+                    'title' => $fileArr['filename'],
+                    'titlecolor' => $titlecolor,
+                    'subtitle' => '',
+                    'filename' => '',
+                    'author' => $author,
+                    'source' => $source,
+                    'outlink' => '',
+                    'date' => $date,
+                    'ico' => '',
+                    'pics' => '',
+                    'picstitle' => '',
+                    'content' => '',
+                    'tags' => '',
+                    'enclosure' => '',
+                    'keywords' => '',
+                    'description' => '',
+                    'sorting' => 255,
+                    'status' => $status,
+                    'istop' => $istop,
+                    'isrecommend' => $isrecommend,
+                    'isheadline' => $isheadline,
+                    'gid' => $gid,
+                    'gtype' => $gtype,
+                    'gnote' => $gnote,
+                    'visits' => 0,
+                    'likes' => 0,
+                    'oppose' => 0,
+                    'create_user' => session('username'),
+                    'update_user' => session('username')
+                );
+                if (! $fileId = $this->model->addContent($fileData)) {
+                    $this->log('新增文章失败！');
+                    error('新增失败！', - 1);
+                }
+                $fileData2 = [
+                    'contentid' => $fileId,
+                    'ext_wj'=>$_POST['reload_ext_wj']
+                ];
+
+                if (!$this->model->addContentExt($fileData2)) {
+                    $this->log('新增文章失败！');
+                    error('新增失败！', - 1);
+                }
+
+                $_POST['ext_wj'] = $_POST['reload_ext_wj'];
+                unset($_POST['ext_wj_id']);
+                unset($_POST['reload_ext_wj']);
+            }
+
+            if (post('ext_wj_id')) {
+                $_POST['ext_wj'] = '';
+                if (! $result = $this->model->getContent(post('ext_wj_id'))) {
+                    $_POST['ext_wj'] = '';
+                }else {
+                    $_POST['ext_wj'] = $result->ext_wj;
+                }
+                unset($_POST['ext_wj_id']);
+            }
+
             // 构建数据
             $data = array(
                 'scode' => $scode,
@@ -542,8 +696,6 @@ class ContentController extends Controller
                 }
 
                 //产品额外信息
-                $contentSortModel = new ContentSortModel();
-                $sort = $contentSortModel->getSort($scode);
                 if ('3' == $sort->mcode) {
                     $data3 = [
                         'model'            => post('model'),
@@ -587,14 +739,18 @@ class ContentController extends Controller
             }
 
             $productExtInfo = [];
+            $file = [];
             if ($mcode == '3') {
                 $productExtInfo = $productExtModel->getExtInfo($id);
+                //查询附件
+                $file = $this->model->getList(7);
             }
             $this->assign('productExtInfo', $productExtInfo);
-            
+            $this->assign('file_select', $this->makeFileSelect($file, $result->ext_wj));
+
             // 文章分类
             $sort_model = model('admin.content.ContentSort');
-            $sort_select = $sort_model->getListSelect($mcode);
+            $sort_select = $sort_model->getListSelect($mcode);//var_dump($sort_select);exit;
             $this->assign('sort_select', $this->makeSortSelect($sort_select, $result->scode));
             $this->assign('subsort_select', $this->makeSortSelect($sort_select, $result->subscode));
             

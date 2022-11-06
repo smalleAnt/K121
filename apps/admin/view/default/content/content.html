@@ -277,18 +277,34 @@
 									 <div id="[value->name]_box" class="pic addedit"><dl></dl> <!-- 规避空内容拖动bug --></div>
 				                </div>
 				                {/if}
-			                	
-			                	{if($value->type==6)}<!-- 文件 -->
-			                	<div class="layui-form-item">
-			                		<label class="layui-form-label">[value->description]</label>
-			                		<div class="layui-input-inline">
-				                     	<input type="text" name="[value->name]" id="[value->name]" placeholder="请上传[value->description]"  class="layui-input">
-				                     </div>
-				                     <button type="button" class="layui-btn file" data-des="[value->name]">
-									 	 <i class="layui-icon">&#xe67c;</i>上传文件
-									 </button>
-				                </div>
-			                	{/if}
+
+							{if($value->type==6)}<!-- 文件 -->
+							{if(get('mcode')=='3')}
+							<div class="layui-form-item">
+								<label class="layui-form-label">附件</label>
+								<div class="layui-input-block" style="width: 30%;">
+									<select name="ext_wj_id" id="ext_wj_id">
+										<option value="">请选择附件</option>
+										{$file_select}
+									</select>
+									<input type="text" name="reload_ext_wj" id="reload_ext_wj" value="" placeholder="请上传文件"  class="layui-input">
+									<button type="button" class="layui-btn file" data-des="reload_ext_wj">
+										<i class="layui-icon">&#xe67c;</i>重新上传
+									</button>
+								</div>
+							</div>
+							{else}
+							<div class="layui-form-item">
+								<label class="layui-form-label">[value->description]</label>
+								<div class="layui-input-inline">
+									<input type="text" name="[value->name]" id="[value->name]" value="{$content->{$value->name}}" placeholder="请上传[value->description]"  class="layui-input">
+								</div>
+								<button type="button" class="layui-btn file" data-des="[value->name]">
+									<i class="layui-icon">&#xe67c;</i>上传文件
+								</button>
+							</div>
+							{/if}
+							{/if}
 			                	
 			                	{if($value->type==7)}<!-- 日期 -->
 				                <div class="layui-form-item">
@@ -737,19 +753,35 @@
 				                </div>
 			                	
 			                	{/if}
-			                	
-			                	{if($value->type==6)}<!-- 文件 -->
-			                	<div class="layui-form-item">
-			                		<label class="layui-form-label">[value->description]</label>
-			                		<div class="layui-input-inline">
-				                     	<input type="text" name="[value->name]" id="[value->name]" value="{$content->{$value->name}}" placeholder="请上传[value->description]"  class="layui-input">
-				                     </div>
-				                     <button type="button" class="layui-btn file" data-des="[value->name]">
-									 	 <i class="layui-icon">&#xe67c;</i>上传文件
-									 </button>
-				                </div>
-			                	{/if}
-			                	
+
+							{if($value->type==6)}<!-- 文件 -->
+							{if(get('mcode')=='3')}
+							<div class="layui-form-item">
+								<label class="layui-form-label">附件</label>
+								<div class="layui-input-block" style="width: 30%;">
+									<select name="ext_wj_id" id="ext_wj_id">
+										<option value="">请选择附件</option>
+										{$file_select}
+									</select>
+									<input type="text" name="reload_ext_wj" id="reload_ext_wj" value="" placeholder="请上传文件"  class="layui-input">
+									<button type="button" class="layui-btn file" data-des="reload_ext_wj">
+										<i class="layui-icon">&#xe67c;</i>重新上传
+									</button>
+								</div>
+							</div>
+							{else}
+							<div class="layui-form-item">
+								<label class="layui-form-label">[value->description]</label>
+								<div class="layui-input-inline">
+									<input type="text" name="[value->name]" id="[value->name]" value="{$content->{$value->name}}" placeholder="请上传[value->description]"  class="layui-input">
+								</div>
+								<button type="button" class="layui-btn file" data-des="[value->name]">
+									<i class="layui-icon">&#xe67c;</i>上传文件
+								</button>
+							</div>
+							{/if}
+							{/if}
+
 			                	{if($value->type==7)}<!-- 日期 -->
 				                <div class="layui-form-item">
 				                     <label class="layui-form-label">[value->description]</label>
@@ -1056,17 +1088,6 @@
 									  <input type="text" name="control_panel" value="{$productExtInfo->control_panel}" placeholder="请输入控制板" class="layui-input">
 								  </div>
 							  </div>
-
-							<div class="layui-form-item">
-								<label class="layui-form-label">文件</label>
-								<div class="layui-input-inline">
-									<input type="text" name="ext_wj" id="ext_wj" placeholder="请上传文件"  class="layui-input">
-								</div>
-								<button type="button" class="layui-btn file" data-des="ext_wj">
-									<i class="layui-icon">&#xe67c;</i>上传文件
-								</button>
-							</div>
-
 						  </div>
 					  </div>
 					</div>

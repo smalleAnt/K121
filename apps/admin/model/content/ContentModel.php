@@ -38,7 +38,8 @@ class ContentModel extends Model
             'a.filename',
             'a.outlink',
             'd.urlname',
-            'b.filename as sortfilename'
+            'b.filename as sortfilename',
+            'd.ext_wj'
         );
         $join = array(
             array(
@@ -55,6 +56,11 @@ class ContentModel extends Model
                 'ay_model d',
                 'b.mcode=d.mcode',
                 'LEFT'
+            ),
+            array(
+                'ay_content_ext d',
+                'a.id=d.contentid',
+                'LEFT'
             )
         );
         return parent::table('ay_content a')->field($field)
@@ -65,6 +71,64 @@ class ContentModel extends Model
             ->join($join)
             ->order('a.sorting ASC,a.id DESC')
             ->page()
+            ->select();
+    }
+
+    // 获取文章列表不带分页
+    public function getListNotPage($mcode, $where = array())
+    {
+        $field = array(
+            'a.id',
+            'b.name as sortname',
+            'a.scode',
+            'c.name as subsortname',
+            'a.subscode',
+            'a.title',
+            'a.subtitle',
+            'a.date',
+            'a.sorting',
+            'a.status',
+            'a.istop',
+            'a.isrecommend',
+            'a.isheadline',
+            'a.visits',
+            'a.ico',
+            'a.pics',
+            'a.filename',
+            'a.outlink',
+            'd.urlname',
+            'b.filename as sortfilename',
+            'd.ext_wj'
+        );
+        $join = array(
+            array(
+                'ay_content_sort b',
+                'a.scode=b.scode',
+                'LEFT'
+            ),
+            array(
+                'ay_content_sort c',
+                'a.subscode=c.scode',
+                'LEFT'
+            ),
+            array(
+                'ay_model d',
+                'b.mcode=d.mcode',
+                'LEFT'
+            ),
+            array(
+                'ay_content_ext d',
+                'a.id=d.contentid',
+                'LEFT'
+            )
+        );
+        return parent::table('ay_content a')->field($field)
+            ->where("b.mcode='$mcode'")
+            ->where('d.type=2 OR d.type is null ')
+            ->where("a.acode='" . session('acode') . "'")
+            ->where($where)
+            ->join($join)
+            ->order('a.sorting ASC,a.id DESC')
             ->select();
     }
 
@@ -120,7 +184,6 @@ class ContentModel extends Model
             ->like('a.title', $keyword)
             ->join($join)
             ->order('a.sorting ASC,a.id DESC')
-            ->page()
             ->select();
     }
 
