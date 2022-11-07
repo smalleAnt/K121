@@ -184,6 +184,7 @@ class ContentModel extends Model
             ->like('a.title', $keyword)
             ->join($join)
             ->order('a.sorting ASC,a.id DESC')
+            ->page()
             ->select();
     }
 

@@ -750,7 +750,7 @@ class ContentController extends Controller
 
             // 文章分类
             $sort_model = model('admin.content.ContentSort');
-            $sort_select = $sort_model->getListSelect($mcode);//var_dump($sort_select);exit;
+            $sort_select = $sort_model->getListSelect($mcode);
             $this->assign('sort_select', $this->makeSortSelect($sort_select, $result->scode));
             $this->assign('subsort_select', $this->makeSortSelect($sort_select, $result->subscode));
             
