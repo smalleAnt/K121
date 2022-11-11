@@ -178,9 +178,6 @@
 					  <ul class="layui-tab-title">
 					    <li class="layui-this">基本内容</li>
 					    <li>高级内容</li>
-						{if(get('mcode')=='3')}
-						<li>产品信息</li>
-						{/if}
 					  </ul>
 					  <div class="layui-tab-content">
 					    <div class="layui-tab-item layui-show">
@@ -522,70 +519,6 @@
 			                </div>
 					    </div>
 
-						<div class="layui-tab-item ">
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">型号</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="model" value="{$productExtInfo->model}" placeholder="请输入型号" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">尺寸</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="size" value="{$productExtInfo->size}" placeholder="请输入尺寸" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">分辨率</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="resolution_ratio" value="{$productExtInfo->resolution_ratio}" placeholder="请输入分辨率" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">视角</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="view_angle" value="{$productExtInfo->view_angle}" placeholder="请输入视角" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">接口</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="interface" value="{$productExtInfo->interface}" placeholder="请输入接口" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">驱动IC</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="ic" value="{$productExtInfo->ic}" placeholder="请输入驱动IC" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">亮度(cd/m²)</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="brightness" value="{$productExtInfo->brightness}" placeholder="请输入亮度" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">触控屏</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="touch_screen" value="{$productExtInfo->touch_screen}" placeholder="请输入触控屏" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">控制板</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="control_panel" value="{$content->control_panel}" placeholder="请输入控制板" class="layui-input">
-								  </div>
-							  </div>
-						  </div>
 					  </div>
 					</div>
 					<div class="layui-form-item">
@@ -614,9 +547,6 @@
 					  <ul class="layui-tab-title">
 					    <li class="layui-this">基本内容</li>
 						  <li>高级内容</li>
-						  {if(get('mcode')=='3')}
-						  <li>产品信息</li>
-						  {/if}
 					  </ul>
 					  <div class="layui-tab-content">
 					    <div class="layui-tab-item layui-show">
@@ -1014,70 +944,6 @@
 			                </div>
 					    </div>
 
-						<div class="layui-tab-item ">
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">型号</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="model" value="{$productExtInfo->model}" placeholder="请输入型号" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">尺寸</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="size" value="{$productExtInfo->size}" placeholder="请输入尺寸" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">分辨率</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="resolution_ratio" value="{$productExtInfo->resolution_ratio}" placeholder="请输入分辨率" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">视角</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="view_angle" value="{$productExtInfo->view_angle}" placeholder="请输入视角" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">接口</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="interface" value="{$productExtInfo->interface}" placeholder="请输入接口" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">驱动IC</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="ic" value="{$productExtInfo->ic}" placeholder="请输入驱动IC" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">亮度(cd/m²)</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="brightness" value="{$productExtInfo->brightness}" placeholder="请输入亮度" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">触控屏</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="touch_screen" value="{$productExtInfo->touch_screen}" placeholder="请输入触控屏" class="layui-input">
-								  </div>
-							  </div>
-
-							  <div class="layui-form-item">
-								  <label class="layui-form-label">控制板</label>
-								  <div class="layui-input-block">
-									  <input type="text" name="control_panel" value="{$productExtInfo->control_panel}" placeholder="请输入控制板" class="layui-input">
-								  </div>
-							  </div>
-						  </div>
 					  </div>
 					</div>
 					<div class="layui-form-item">

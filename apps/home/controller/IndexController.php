@@ -369,31 +369,7 @@ class IndexController extends Controller
     }
 
     private function getProductExtInfo ($data){
-        $contentSortModel = new ContentSortModel();
-        $productExtModel = new ProductExtModel();
-        $data->model = '';
-        $data->size = '';
-        $data->resolution_ratio = '';
-        $data->view_angle = '';
-        $data->interface = '';
-        $data->ic = '';
-        $data->touch_screen = '';
-        $data->control_panel = '';
-        $data->brightness = '';
         $data->ext_wj_name = '';
-
-        $sort = $contentSortModel->getSort($data->scode);
-        if ('3' == $sort->mcode && $ret = $productExtModel->getExtInfo($data->id)) {
-            $data->model = $ret->model;
-            $data->size = $ret->size;
-            $data->resolution_ratio = $ret->resolution_ratio;
-            $data->view_angle = $ret->view_angle;
-            $data->interface = $ret->interface;
-            $data->ic = $ret->ic;
-            $data->touch_screen = $ret->touch_screen;
-            $data->control_panel = $ret->control_panel;
-            $data->brightness = $ret->brightness;
-        }
         if ($data->ext_wj != '') {
             $arr = pathinfo($data->ext_wj);
             $data->ext_wj_name = $arr['basename'];

@@ -256,8 +256,8 @@ class ContentController extends Controller
                 }else {
                     $_POST['ext_wj'] = $result->ext_wj;
                 }
-                unset($_POST['ext_wj_id']);
             }
+            unset($_POST['ext_wj_id']);
             
             // 执行添加
             if (! ! $id = $this->model->addContent($data)) {
@@ -283,23 +283,6 @@ class ContentController extends Controller
                     }
                 }
 
-                if ('3' == get('mcode', 'var')) {
-                    $productExtModel = new ProductExtModel();
-                    $data3 = [
-                        'model'            => post('model'),
-                        'size'             => post('size'),
-                        'resolution_ratio' => post('resolution_ratio'),
-                        'view_angle'       => post('view_angle'),
-                        'interface'        => post('interface'),
-                        'ic'               => post('ic'),
-                        'brightness'       => post('brightness'),
-                        'touch_screen'     => post('touch_screen'),
-                        'control_panel'    => post('control_panel'),
-                        'productid'        => $id,
-                    ];
-                    $productExtModel->addExtInfo($data3);
-                }
-                
                 $this->log('新增文章成功！');
                 if (! ! $backurl = get('backurl')) {
                     success('新增成功！', base64_decode($backurl));
@@ -503,7 +486,6 @@ class ContentController extends Controller
                 alert_back('修改失败！');
             }
         }
-        $productExtModel = new ProductExtModel();
         $contentSortModel = model('admin.content.ContentSort');
         // 修改操作
         if ($_POST) {
@@ -574,7 +556,6 @@ class ContentController extends Controller
                     $filename = $filename . '-' . mt_rand(1, 20);
                 }
             }
-            $sort = $contentSortModel->getSort($scode);
 
             //重新提交
             if (post('reload_ext_wj')) {
@@ -695,28 +676,6 @@ class ContentController extends Controller
                     }
                 }
 
-                //产品额外信息
-                if ('3' == $sort->mcode) {
-                    $data3 = [
-                        'model'            => post('model'),
-                        'size'             => post('size'),
-                        'resolution_ratio' => post('resolution_ratio'),
-                        'view_angle'       => post('view_angle'),
-                        'interface'        => post('interface'),
-                        'ic'               => post('ic'),
-                        'brightness'       => post('brightness'),
-                        'touch_screen'     => post('touch_screen'),
-                        'control_panel'    => post('control_panel'),
-                    ];
-                    if ($productExtModel->getExtInfo($id)) {
-                        $productExtModel->modExtInfo($id,$data3);
-                    }else {
-                        $data3['productid'] = $id;
-                        $productExtModel->addExtInfo($data3);
-                    }
-                }
-
-                
                 $this->log('修改文章' . $id . '成功！');
                 if (! ! $backurl = get('backurl')) {
                     success('修改成功！', base64_decode($backurl));
@@ -741,11 +700,8 @@ class ContentController extends Controller
             $productExtInfo = [];
             $file = [];
             if ($mcode == '3') {
-                $productExtInfo = $productExtModel->getExtInfo($id);
-                //查询附件
                 $file = $this->model->getList(7);
             }
-            $this->assign('productExtInfo', $productExtInfo);
             $this->assign('file_select', $this->makeFileSelect($file, $result->ext_wj));
 
             // 文章分类
