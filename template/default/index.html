@@ -118,7 +118,15 @@
       <div class="bhead"> <strong>[sort:name]</strong> <i>[sort:subname]</i> <span>  <a href="[sort:link]" title="查看更多">查看更多</a>  </span> </div>
       <div class="bbody">
         {pboot:content id=459}
-        <div class="about_video"> <img src="[content:ico]"> </div>
+        <div class="about_video">
+          {pboot:if('[content:ext_video]' != '')}
+          <video width="500" height="240" controls muted controlsList="nodownload">
+            <source src="[content:ext_video]">
+          </video>
+          {else}
+          <img src="[content:ico]">
+          {/pboot:if}
+        </div>
         <div class="about_txt">[content:content drophtml=1 dropblank=1 lencn=100]</div>
         {/pboot:content}
       </div>
@@ -131,7 +139,14 @@
   <div class="bbody">
     <ul>
       {pboot:link gid=1}
-      <li><a href="[link:link]" target="_blank">[link:name]</a></li>
+      <li>
+        <a href="[link:link]" target="_blank">
+          <div style="width: 40px;text-align: center;">
+            <img src="[link:logo]" style="width: 40px;">
+            <span>[link:name]</span>
+          </div>
+      </a>
+      </li>
       {/pboot:link}
     </ul>
   </div>
