@@ -621,8 +621,8 @@ class ContentController extends Controller
                 }else {
                     $_POST['ext_wj'] = $result->ext_wj;
                 }
-                unset($_POST['ext_wj_id']);
             }
+            unset($_POST['ext_wj_id']);
 
             // 构建数据
             $data = array(
